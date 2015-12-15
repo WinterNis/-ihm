@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Groupe AS"
+        android:id="@+id/group_name"
+        android:textColor="#393939"
+        android:layout_alignParentLeft="true"
+        android:paddingBottom="8dp"/>
+
+    <ImageView
+        android:src="@drawable/ic_avatar_round"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:id="@+id/group_member1"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/group_name"
+        android:layout_marginRight="8dp"/>
+
+    <ImageView
+        android:src="@drawable/ic_avatar3_round"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:id="@+id/group_member2"
+        android:layout_toRightOf="@id/group_member1"
+        android:layout_below="@id/group_name"
+        android:layout_marginRight="8dp" />
+
+    <Button
+        android:id="@+id/members_others"
+        android:text="+4"
+        android:textColor="#BBB"
+        android:textSize="24dp"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_toRightOf="@id/group_member2"
+        android:background="@drawable/roundcorner"
+        android:layout_below="@+id/group_name"
+        android:layout_marginRight="8dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="12h30"
+        android:id="@+id/horaire"
+        android:textColor="#393939"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:paddingBottom="8dp"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:src="@drawable/ic_check_white_48dp"
+        app:fabSize="normal"
+        app:backgroundTint="#BBB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/horaire" />
+
+</RelativeLayout>

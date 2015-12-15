@@ -1,23 +1,28 @@
 package com.h4402.ihm;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-
-
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 // https://romannurik.github.io/AndroidAssetStudio/icons-generic.html
 public class MainActivity extends AppCompatActivity {
 
+    private ListView join_view;
+    private String[] restaurants_names;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.join_view);
+
+        join_view = (ListView) findViewById(R.id.join_view_restaurant_list);
+        restaurants_names = new String[]{"Castor & Pollux", "RU Jussieu", "Olivier", "Grillon", "Kebab"};
+
+        ArrayAdapter<String> join_view_adapter = new ArrayAdapter<String>(this, R.layout.join_view_restaurant, R.id.restaurant_name, restaurants_names);
+        join_view.setAdapter(join_view_adapter);
     }
 
     @Override
