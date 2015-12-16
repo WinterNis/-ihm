@@ -1,28 +1,52 @@
-package com.h4402.ihm;
+package com.h4402.ihm.controller;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+
+
+import com.h4402.ihm.Model.Restaurant;
+import com.h4402.ihm.R;
+import com.h4402.ihm.join_view.Join_view_adapter;
+
+import java.util.LinkedList;
+import java.util.List;
 
 // https://romannurik.github.io/AndroidAssetStudio/icons-generic.html
 public class MainActivity extends AppCompatActivity {
 
     private ListView join_view;
-    private String[] restaurants_names;
+    private LinearLayout join_view_group;
+    private List<Restaurant> restaurants;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.join_view);
 
-        join_view = (ListView) findViewById(R.id.join_view_restaurant_list);
-        restaurants_names = new String[]{"Castor & Pollux", "RU Jussieu", "Olivier", "Grillon", "Kebab"};
+        // Creating groups manually
 
-        ArrayAdapter<String> join_view_adapter = new ArrayAdapter<String>(this, R.layout.join_view_restaurant, R.id.restaurant_name, restaurants_names);
+        // Creating restaurants from the String[].
+        String[] restaurants_names = new String[]{"Castor & Pollux", "RU Jussieu", "Olivier", "Grillon", "Kebab"};
+        restaurants = new LinkedList<>();
+        for (String s : restaurants_names){
+            restaurants.add(new Restaurant(s));
+        }
+
+        // Adding groups to the restaurants
+
+        // Linking the ListView to its adapter
+        join_view = (ListView) findViewById(R.id.join_view_restaurant_list);
+
+        Join_view_adapter join_view_adapter = new Join_view_adapter(this, R.layout.join_view_restaurant, R.id.restaurant_name, restaurants);
         join_view.setAdapter(join_view_adapter);
+
+        join_view_group = (LinearLayout) findViewById(R.id.group_container);
+
     }
 
     @Override
