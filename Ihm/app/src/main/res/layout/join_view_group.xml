@@ -11,42 +11,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Groupe AS"
         android:id="@+id/group_name"
         android:textColor="#393939"
-        android:layout_alignParentLeft="true"
         android:paddingBottom="8dp"/>
 
-    <ImageView
-        android:src="@drawable/ic_avatar_round"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:id="@+id/group_member1"
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
+        android:orientation="horizontal"
         android:layout_below="@id/group_name"
-        android:layout_marginRight="8dp"/>
+        android:id="@+id/avatar_bar">
 
-    <ImageView
-        android:src="@drawable/ic_avatar1_round_2"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:id="@+id/group_member2"
-        android:layout_toRightOf="@id/group_member1"
-        android:layout_below="@id/group_name"
-        android:layout_marginRight="8dp" />
-
-    <Button
-        android:id="@+id/members_others"
-        android:text="+4"
-        android:textColor="#BBB"
-        android:textSize="24dp"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:layout_toRightOf="@id/group_member2"
-        android:background="@drawable/roundcorner"
-        android:layout_below="@+id/group_name"
-        android:layout_marginRight="8dp"
-        />
+    </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
@@ -59,13 +36,14 @@
         android:layout_alignParentTop="true"
         android:paddingBottom="8dp"/>
 
-    <android.support.design.widget.FloatingActionButton
-        android:src="@drawable/ic_check_white_48dp"
-        app:fabSize="normal"
-        app:backgroundTint="#BBB"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageButton
+        android:id="@+id/aaa"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:background="@drawable/roundcorner"
         android:layout_alignParentRight="true"
-        android:layout_below="@id/horaire" />
+        android:layout_below="@id/horaire"
+        android:src="@drawable/ic_check_dark"
+        />
 
 </RelativeLayout>

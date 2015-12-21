@@ -4,36 +4,63 @@ import java.util.List;
 
 /**
  * Created by thomas on 16/12/2015.
+ *
+ * A group is specific to a restaurant. His main characteristics are the people inside this group
+ * and the hour they want to eat.
  */
 public class Group {
 
-    private List<Person> people;
+    private List<User> users;
     private String name;
+    private String hour;
 
-
-    public Group(String n){
+    /**
+     * Constructor
+     * @param n Name of the group
+     * @param g List of Users inside this group
+     * @param h Hour they want to eat
+     */
+    public Group(String n, List<User> g, String h){
         name = n;
+        users = g;
+        hour = h;
     }
 
-    public Group(String n, List<Person> g){
-        name = n;
-        people = g;
+    /**
+     * User getter
+     * @return users inside the group
+     */
+    public List<User> getUsers (){
+        return users;
     }
 
-
-    public List<Person> getGroups (){
-        return people;
+    /**
+     * Add a user inside the group
+     * @param u User to add
+     */
+    public void addUser( User u){
+        users.add(u);
     }
 
-    public void addPerson( Person p){
-        people.add(p);
+    /**
+     * Delete a user form the group
+     * @param u User to remove
+     */
+    public void deleteUser( User u){
+        users.remove(u);
     }
 
-    public void deletePerson( Person p){
-        people.remove(p);
-    }
-
+    /**
+     * Name getter
+     * @return name of the group
+     */
     public String getName(){
         return name;
     }
+
+    /**
+     * Hour getter
+     * @return hour of the meeting
+     */
+    public String getHour() { return hour; }
 }
