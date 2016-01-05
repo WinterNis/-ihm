@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:rsb="http://schemas.android.com/tools"
+    android:background="#e6e6e6"
+    android:baselineAligned="false"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+
+        android:background="#ffffff">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:orientation="vertical"
+            android:padding="10sp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:paddingRight="30sp"
+                android:text="Rejoindre Groupe : H4402"
+                android:textColor="#393939"
+                android:textSize="26sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:paddingRight="30sp"
+                android:text="Choix horaire:"
+                android:textColor="#393939"
+                android:textSize="24sp" />
+
+            <org.florescu.android.rangeseekbar.RangeSeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                rsb:absoluteMaxValue="150"
+                rsb:absoluteMinValue="20"
+                rsb:thumbDisabled="@mipmap/ic_launcher"
+                rsb:thumbNormal="@mipmap/ic_launcher"
+                rsb:thumbPressed="@mipmap/ic_launcher"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:paddingRight="30sp"
+                android:text="12h00 - 13h30"
+                android:textColor="#393939"
+                android:textSize="24sp" />
+
+            <ImageButton
+                android:id="@+id/aaa"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_gravity="right"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/roundcorner"
+                android:src="@drawable/ic_check_dark" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>
