@@ -1,4 +1,4 @@
-package com.h4402.ihm.controller;
+package com.h4402.ihm.Controller;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
