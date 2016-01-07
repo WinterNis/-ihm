@@ -35,8 +35,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.join_view);
+        setContentView(R.layout.activity_activity_inscription);
 
+        /*
         // Creating people manually
         User user1 = new User("Luke Skywalker", R.drawable.av6);
         User user2 = new User("Kylo Ren", R.drawable.av4);
@@ -112,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+        */
     }
 
     @Override
