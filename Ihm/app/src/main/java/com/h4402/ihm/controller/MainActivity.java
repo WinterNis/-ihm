@@ -1,11 +1,14 @@
-package com.h4402.ihm.Controller;
+package com.h4402.ihm.controller;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.SearchView;
 
 
 import com.h4402.ihm.Model.Group;
@@ -24,6 +27,7 @@ import java.util.List;
  */
 public class MainActivity extends AppCompatActivity {
 
+    private SearchView searchView;
     private ListView joinViewRestaurantsList;
     private LinearLayout joinViewGroup;
     private List<Restaurant> restaurants;
@@ -92,6 +96,22 @@ public class MainActivity extends AppCompatActivity {
         joinViewRestaurantsList.setAdapter(joinViewRestaurantsListAdapter);
 
         //join_view_group = (LinearLayout) findViewById(R.id.group_container);
+
+        searchView = (SearchView)findViewById(R.id.search_view);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                if (query.equals("add")) {
+                    AddGroup();
+                }
+                return true;
+            }
+        });
     }
 
     @Override
@@ -114,5 +134,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void AddGroup() {
+        Intent intent = new Intent(this, AddGroupActivity.class);
+        startActivity(intent);
     }
 }
